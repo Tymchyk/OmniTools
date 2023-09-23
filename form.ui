@@ -65,7 +65,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="page">
        <widget class="QFrame" name="frame">
@@ -434,6 +434,72 @@
         </property>
        </widget>
       </widget>
+      <widget class="QWidget" name="page_4">
+       <widget class="QFrame" name="frame_4">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>491</width>
+          <height>471</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QScrollArea" name="scrollArea">
+         <property name="geometry">
+          <rect>
+           <x>19</x>
+           <y>9</y>
+           <width>451</width>
+           <height>451</height>
+          </rect>
+         </property>
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>449</width>
+            <height>449</height>
+           </rect>
+          </property>
+          <widget class="QComboBox" name="comboBox">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>70</y>
+             <width>191</width>
+             <height>25</height>
+            </rect>
+           </property>
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+          </widget>
+          <widget class="QListWidget" name="listWidget">
+           <property name="geometry">
+            <rect>
+             <x>40</x>
+             <y>100</y>
+             <width>191</width>
+             <height>192</height>
+            </rect>
+           </property>
+          </widget>
+         </widget>
+        </widget>
+       </widget>
+      </widget>
       <widget class="QWidget" name="page_2">
        <widget class="QLabel" name="label_2">
         <property name="geometry">
@@ -462,8 +528,8 @@
       <widget class="QPushButton" name="Homepage">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>90</y>
+         <x>10</x>
+         <y>20</y>
          <width>121</width>
          <height>25</height>
         </rect>
@@ -485,8 +551,8 @@
       <widget class="QPushButton" name="Chats">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>140</y>
+         <x>10</x>
+         <y>60</y>
          <width>89</width>
          <height>25</height>
         </rect>
@@ -508,8 +574,8 @@
       <widget class="QPushButton" name="Tasks">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>190</y>
+         <x>10</x>
+         <y>100</y>
          <width>89</width>
          <height>25</height>
         </rect>
@@ -519,7 +585,7 @@
        </property>
        <property name="icon">
         <iconset resource="resources.qrc">
-         <normaloff>:/icons/images/icons/folder-2-16.ico</normaloff>:/icons/images/icons/folder-2-16.ico</iconset>
+         <normaloff>:/images/icons/calendar-16.ico</normaloff>:/images/icons/calendar-16.ico</iconset>
        </property>
        <property name="checkable">
         <bool>true</bool>
@@ -531,14 +597,18 @@
       <widget class="QPushButton" name="Settings">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>224</y>
+         <x>10</x>
+         <y>140</y>
          <width>89</width>
          <height>31</height>
         </rect>
        </property>
        <property name="text">
         <string>Settings</string>
+       </property>
+       <property name="icon">
+        <iconset resource="resources.qrc">
+         <normaloff>:/icons/images/icons/gear-16.ico</normaloff>:/icons/images/icons/gear-16.ico</iconset>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton_2">
@@ -552,6 +622,10 @@
        </property>
        <property name="text">
         <string>Exit</string>
+       </property>
+       <property name="icon">
+        <iconset resource="resources.qrc">
+         <normaloff>:/images/icons/x-mark-16.ico</normaloff>:/images/icons/x-mark-16.ico</iconset>
        </property>
       </widget>
      </widget>
@@ -568,7 +642,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>90</y>
+         <y>20</y>
          <width>61</width>
          <height>25</height>
         </rect>
@@ -590,7 +664,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>140</y>
+         <y>60</y>
          <width>61</width>
          <height>25</height>
         </rect>
@@ -612,13 +686,13 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>190</y>
+         <y>100</y>
          <width>61</width>
          <height>25</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">image: url(:/icons/images/icons/folder-2-16.ico);</string>
+        <string notr="true">image: url(:/images/icons/calendar-16.ico);</string>
        </property>
        <property name="text">
         <string/>
@@ -634,13 +708,16 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>224</y>
+         <y>140</y>
          <width>61</width>
          <height>31</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/icons/images/icons/gear-16.ico);</string>
+       </property>
        <property name="text">
-        <string>S</string>
+        <string/>
        </property>
       </widget>
       <widget class="QPushButton" name="pushButton">
@@ -652,8 +729,11 @@
          <height>25</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/images/icons/x-mark-16.ico);</string>
+       </property>
        <property name="text">
-        <string>E</string>
+        <string/>
        </property>
       </widget>
      </widget>

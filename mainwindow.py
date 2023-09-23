@@ -3,7 +3,7 @@ import sys
 import csv
 import subprocess
 
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication, QMainWindow, QListWidgetItem,QListWidget
 from PySide6.QtCore import QRect,QDate,Qt
 from PySide6.QtGui import QTextCharFormat, QTextCursor
 from api_package.db import DatabaseAdapter,Crypto,Finance,Currency
@@ -20,15 +20,17 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.MenuBig.hide()
-        self.ui.Homepage.setChecked(True)
         self.ui.Menu.clicked.connect(self.change_geometry)
         self.ui.Homepage.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(0))
-        self.ui.Chats.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(2))
+        self.ui.Chats.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(3))
         self.ui.Tasks.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(1))
+        self.ui.Settings.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(2))
         self.set_values()
         self.ui.save.clicked.connect(lambda: self.save_task())
         self.ui.read.clicked.connect(lambda: self.read_task())
         self.selected_dates()
+        self.ui.Homepage.setChecked(True)
+        self.set_list()
 
 
     def change_geometry(self):
@@ -97,6 +99,18 @@ class MainWindow(QMainWindow):
             date_format = QTextCharFormat()
             date_format.setBackground(Qt.yellow)
             self.ui.calendar.setDateTextFormat(date, date_format)
+
+
+    def set_list(self):
+        list_widget = self.ui.listWidget
+        list = ["Toyota Motor Corporation(TM)","Intel Corporation (INTC)","Microsoft Corporation (MSFT)","Apple Computer, Inc. (AAPL)","Amazon.com, Inc.(AMZN)","Google Inc.(GOOGL)","Siemens AG (SI)"]
+        for l in sorted(list):
+            item = QListWidgetItem(l)
+            list_widget.addItem(item)
+        list_widget.setSelectionMode(QListWidget.MultiSelection)
+        selected_items = list_widget.selectedItems()
+        for item in selected_items:
+            print(item.text())
 
 
 

@@ -13,4 +13,10 @@
         <file>images/crypto/icons8-ethereum-48.png</file>
         <file>images/crypto/icons8-crypto-48.png</file>
     </qresource>
+    <qresource prefix="/">
+        <file>images/icons/x-mark-16.ico</file>
+        <file>images/icons/trash-9-16.ico</file>
+        <file>images/icons/stackoverflow-16.ico</file>
+        <file>images/icons/calendar-16.ico</file>
+    </qresource>
 </RCC>
