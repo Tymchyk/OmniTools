@@ -1,0 +1,893 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>530</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="MainWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>801</width>
+      <height>541</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="MainPage" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>811</width>
+       <height>541</height>
+      </rect>
+     </property>
+     <widget class="QPushButton" name="Menu">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>89</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Menu</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resources.qrc">
+        <normaloff>:/icons/images/icons/list-view-16.ico</normaloff>:/icons/images/icons/list-view-16.ico</iconset>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="autoExclusive">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>30</y>
+        <width>531</width>
+        <height>521</height>
+       </rect>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="page">
+       <widget class="QFrame" name="frame">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>30</y>
+          <width>231</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>16</y>
+           <width>51</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::PlainText</enum>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="resources.qrc">:/crypto/images/crypto/icons8-crypto-48.png</pixmap>
+         </property>
+        </widget>
+        <widget class="QLabel" name="value1">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>40</y>
+           <width>81</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>value</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_5">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>41</width>
+           <height>61</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap resource="resources.qrc">:/crypto/images/crypto/icons8-ethereum-48.png</pixmap>
+         </property>
+        </widget>
+        <widget class="QLabel" name="value2">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>80</y>
+           <width>71</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>value</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="name">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>20</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>name</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="name1">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>70</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>name</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QFrame" name="frame_2">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>30</y>
+          <width>251</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLabel" name="currency1">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>20</y>
+           <width>71</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="currency_price1">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>50</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="currency2">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>80</y>
+           <width>81</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="currency_price2">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>110</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="currency3">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>20</y>
+           <width>71</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="currency_price3">
+         <property name="geometry">
+          <rect>
+           <x>140</x>
+           <y>50</y>
+           <width>81</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QFrame" name="frame_3">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>220</y>
+          <width>511</width>
+          <height>231</height>
+         </rect>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLabel" name="finance1">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>30</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="finance2">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>90</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="finance3">
+         <property name="geometry">
+          <rect>
+           <x>300</x>
+           <y>30</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="finance4">
+         <property name="geometry">
+          <rect>
+           <x>300</x>
+           <y>90</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="finance_price1">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>60</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="finance_price2">
+         <property name="geometry">
+          <rect>
+           <x>50</x>
+           <y>120</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="finance_price3">
+         <property name="geometry">
+          <rect>
+           <x>300</x>
+           <y>60</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="finance_price4">
+         <property name="geometry">
+          <rect>
+           <x>300</x>
+           <y>120</y>
+           <width>67</width>
+           <height>17</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>TextLabel</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_3">
+       <widget class="QPushButton" name="save">
+        <property name="geometry">
+         <rect>
+          <x>380</x>
+          <y>450</y>
+          <width>89</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Save</string>
+        </property>
+       </widget>
+       <widget class="QTextEdit" name="textEdit">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>180</y>
+          <width>461</width>
+          <height>221</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="read">
+        <property name="geometry">
+         <rect>
+          <x>260</x>
+          <y>450</y>
+          <width>89</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Read</string>
+        </property>
+       </widget>
+       <widget class="QCalendarWidget" name="calendar">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>0</y>
+          <width>456</width>
+          <height>171</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_2">
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>180</y>
+          <width>67</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Chats</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="MenuBig">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>80</y>
+        <width>191</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <widget class="QPushButton" name="Homepage">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>90</y>
+         <width>121</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Homepage</string>
+       </property>
+       <property name="icon">
+        <iconset resource="resources.qrc">
+         <normaloff>:/icons/images/icons/home-5-16.ico</normaloff>:/icons/images/icons/home-5-16.ico</iconset>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Chats">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>140</y>
+         <width>89</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Chats</string>
+       </property>
+       <property name="icon">
+        <iconset resource="resources.qrc">
+         <normaloff>:/icons/images/icons/edit-6-16.ico</normaloff>:/icons/images/icons/edit-6-16.ico</iconset>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Tasks">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>190</y>
+         <width>89</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Tasks</string>
+       </property>
+       <property name="icon">
+        <iconset resource="resources.qrc">
+         <normaloff>:/icons/images/icons/folder-2-16.ico</normaloff>:/icons/images/icons/folder-2-16.ico</iconset>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Settings">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>224</y>
+         <width>89</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Settings</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>400</y>
+         <width>89</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Exit</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="MenuShort" native="true">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>80</y>
+        <width>81</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <widget class="QPushButton" name="Home">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>90</y>
+         <width>61</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/icons/images/icons/home-5-16.ico);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Chat">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>140</y>
+         <width>61</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/icons/images/icons/edit-6-16.ico);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>190</y>
+         <width>61</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">image: url(:/icons/images/icons/folder-2-16.ico);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Setting">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>224</y>
+         <width>61</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>S</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>400</y>
+         <width>61</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>E</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>Menu</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MenuBig</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>308</x>
+     <y>42</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>211</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Menu</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MenuShort</receiver>
+   <slot>setHidden(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>340</x>
+     <y>50</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>6</x>
+     <y>256</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Home</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Homepage</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>47</x>
+     <y>105</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>155</x>
+     <y>109</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Chat</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Chats</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>16</x>
+     <y>144</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>129</x>
+     <y>155</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Tasks</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>32</x>
+     <y>192</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>153</x>
+     <y>210</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Homepage</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Home</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>137</x>
+     <y>100</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>44</x>
+     <y>109</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Chats</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Chat</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>175</x>
+     <y>147</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>49</x>
+     <y>159</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Tasks</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pushButton_5</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>133</x>
+     <y>199</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>65</x>
+     <y>207</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Setting</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Settings</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>27</x>
+     <y>224</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>156</x>
+     <y>245</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Settings</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Setting</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>134</x>
+     <y>230</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>16</x>
+     <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pushButton_2</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>27</x>
+     <y>552</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>118</x>
+     <y>545</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>pushButton</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>166</x>
+     <y>532</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>41</x>
+     <y>546</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>154</x>
+     <y>537</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>152</x>
+     <y>637</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>41</x>
+     <y>546</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>45</x>
+     <y>666</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
