@@ -3,13 +3,16 @@ from datetime import date, timedelta
 import requests
 
 
-def get_finance():
+def get_finance(symbols):
     api_key = api_finance
     data = {}
-    symbols = ["AAPL", "MSFT", "AMZN", "GOOGL"]
-    current_date = date.today() - timedelta(days=1)
+    if symbols == None:
+        symbols = ["AAPL", "MSFT", "AMZN", "GOOGL"]
+    current_date = date.today() - timedelta(days=3)
     for symbol in symbols:
+        print(symbol)
         response = requests.get(f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={api_key}")
+        print(response.json())
         data[symbol] = float(response.json()["Time Series (Daily)"][current_date.strftime("%Y-%m-%d")]["4. close"])
     return data
     

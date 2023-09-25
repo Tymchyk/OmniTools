@@ -2,10 +2,12 @@
 import sys
 import csv
 import subprocess
+import re
+import json
 
-from PySide6.QtWidgets import QApplication, QMainWindow, QListWidgetItem,QListWidget
+from PySide6.QtWidgets import QApplication, QMainWindow, QListWidgetItem,QListWidget,QListView
 from PySide6.QtCore import QRect,QDate,Qt
-from PySide6.QtGui import QTextCharFormat, QTextCursor
+from PySide6.QtGui import QTextCharFormat, QTextCursor,QStandardItemModel
 from api_package.db import DatabaseAdapter,Crypto,Finance,Currency
 
 # Important:
@@ -20,6 +22,7 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.MenuBig.hide()
+        self.ui.listWidget.hide()
         self.ui.Menu.clicked.connect(self.change_geometry)
         self.ui.Homepage.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(0))
         self.ui.Chats.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(3))
@@ -30,7 +33,8 @@ class MainWindow(QMainWindow):
         self.ui.read.clicked.connect(lambda: self.read_task())
         self.selected_dates()
         self.ui.Homepage.setChecked(True)
-        self.set_list()
+        self.ui.Box1.activated.connect(self.set_list)
+        self.ui.sett_save.clicked.connect(self.add_new_values)
 
 
     def change_geometry(self):
@@ -44,8 +48,9 @@ class MainWindow(QMainWindow):
     def set_values(self):
         db = DatabaseAdapter(Crypto,Finance,Currency)
         if db.select() == []:
-            db.add()
+            db.add(finance = None)
         values = db.select_all()
+        db.close()
         self.ui.name.setText(values[0][0][0].capitalize())
         self.ui.value1.setText(f"$ {values[0][0][1]:,.02f}")
         self.ui.name1.setText(values[0][1][0].capitalize())
@@ -102,15 +107,35 @@ class MainWindow(QMainWindow):
 
 
     def set_list(self):
+        values = []
         list_widget = self.ui.listWidget
-        list = ["Toyota Motor Corporation(TM)","Intel Corporation (INTC)","Microsoft Corporation (MSFT)","Apple Computer, Inc. (AAPL)","Amazon.com, Inc.(AMZN)","Google Inc.(GOOGL)","Siemens AG (SI)"]
-        for l in sorted(list):
-            item = QListWidgetItem(l)
-            list_widget.addItem(item)
-        list_widget.setSelectionMode(QListWidget.MultiSelection)
-        selected_items = list_widget.selectedItems()
-        for item in selected_items:
-            print(item.text())
+        if list_widget.isHidden():
+            list_widget.show()
+            list = ["Toyota Motor Corporation(TM)","Intel Corporation (INTC)","Microsoft Corporation (MSFT)","Apple Computer, Inc. (AAPL)","Amazon.com, Inc.(AMZN)","Google Inc.(GOOGL)","Siemens AG (SI)"]
+            for l in sorted(list):
+                item = QListWidgetItem(l)
+                list_widget.addItem(item)
+            list_widget.setSelectionMode(QListWidget.MultiSelection)
+
+        else:
+            list_widget.hide()
+            selected_items = list_widget.selectedItems()
+            for item in selected_items:
+                search_symbols = re.search(r"(.*)\((\w+)\)",item.text())
+                values.append(search_symbols.group(2))
+            data = {}
+            data["finance"] = values
+            with open("settings.json", "w") as file:
+                json.dump(data,file)
+
+
+    def add_new_values(self):
+        with open("settings.json", "r") as file:
+            data = json.load(file)
+        db = DatabaseAdapter(Crypto,Finance,Currency)
+        db.remove()
+        db.add(finance = data["finance"])
+
 
 
 

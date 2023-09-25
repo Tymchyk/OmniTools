@@ -471,7 +471,7 @@
             <height>449</height>
            </rect>
           </property>
-          <widget class="QComboBox" name="comboBox">
+          <widget class="QComboBox" name="Box1">
            <property name="geometry">
             <rect>
              <x>40</x>
@@ -494,6 +494,19 @@
              <width>191</width>
              <height>192</height>
             </rect>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="sett_save">
+           <property name="geometry">
+            <rect>
+             <x>310</x>
+             <y>400</y>
+             <width>89</width>
+             <height>25</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Save</string>
            </property>
           </widget>
          </widget>
