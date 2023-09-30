@@ -5,10 +5,11 @@ import subprocess
 import re
 import json
 
-from PySide6.QtWidgets import QApplication, QMainWindow, QListWidgetItem,QListWidget,QListView
+from PySide6.QtWidgets import QApplication, QMainWindow, QListWidgetItem,QListWidget,QListView,QFrame
 from PySide6.QtCore import QRect,QDate,Qt
 from PySide6.QtGui import QTextCharFormat, QTextCursor,QStandardItemModel
-from api_package.db import DatabaseAdapter,Crypto,Finance,Currency
+from api_package.db import DatabaseAdapter,Crypto,Finance,Currency,Database
+from values import list_finance,list_crypto, list_currency
 
 # Important:
 # You need to run the following command to generate the ui_form.py file
@@ -23,6 +24,10 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         self.ui.MenuBig.hide()
         self.ui.listWidget.hide()
+        self.ui.listWidget2.hide()
+        self.ui.listWidget3.hide()
+        self.ui.frame_crypto.setFrameStyle(QFrame.NoFrame)
+        self.ui.frame_currency.setFrameStyle(QFrame.NoFrame)
         self.ui.Menu.clicked.connect(self.change_geometry)
         self.ui.Homepage.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(0))
         self.ui.Chats.clicked.connect(lambda: self.ui.stackedWidget.setCurrentIndex(3))
@@ -33,12 +38,13 @@ class MainWindow(QMainWindow):
         self.ui.read.clicked.connect(lambda: self.read_task())
         self.selected_dates()
         self.ui.Homepage.setChecked(True)
-        self.ui.Box1.activated.connect(self.set_list)
+        self.ui.Box1.activated.connect(lambda:self.set_list(list_finance,self.ui.listWidget,(self.ui.frame_crypto,self.ui.frame_currency),240,100,"finance"))
+        self.ui.Box2.activated.connect(lambda:self.set_list(list_crypto,self.ui.listWidget2,(self.ui.frame_currency,None),300,160,"crypto"))
+        self.ui.Box3.activated.connect(lambda:self.set_list(list_currency,self.ui.listWidget3,None,None,None,"currency"))
         self.ui.sett_save.clicked.connect(self.add_new_values)
 
 
     def change_geometry(self):
-        print(self.ui.MainPage.geometry())
         if self.ui.MainPage.geometry() == QRect(0, 0, 811, 541):
             self.ui.MainPage.setGeometry(10,0,811,541)
         elif self.ui.MainPage.geometry() == QRect(10, 0, 811, 541):
@@ -48,9 +54,9 @@ class MainWindow(QMainWindow):
     def set_values(self):
         db = DatabaseAdapter(Crypto,Finance,Currency)
         if db.select() == []:
-            db.add(finance = None)
+            db.add(finance = None, currency = None, crypto = None)
         values = db.select_all()
-        db.close()
+        print(values)
         self.ui.name.setText(values[0][0][0].capitalize())
         self.ui.value1.setText(f"$ {values[0][0][1]:,.02f}")
         self.ui.name1.setText(values[0][1][0].capitalize())
@@ -106,12 +112,17 @@ class MainWindow(QMainWindow):
             self.ui.calendar.setDateTextFormat(date, date_format)
 
 
-    def set_list(self):
+    def set_list(self,list,widget,next_frame,height_set,height_back,task):
         values = []
-        list_widget = self.ui.listWidget
+        list_widget = widget
         if list_widget.isHidden():
+            if next_frame != None:
+                next_frame[0].setGeometry(50,height_set,361,201)
+                for next in next_frame[1:]:
+                    if next == None:
+                        break
+                    next.setGeometry(50,height_set+40,361,201)
             list_widget.show()
-            list = ["Toyota Motor Corporation(TM)","Intel Corporation (INTC)","Microsoft Corporation (MSFT)","Apple Computer, Inc. (AAPL)","Amazon.com, Inc.(AMZN)","Google Inc.(GOOGL)","Siemens AG (SI)"]
             for l in sorted(list):
                 item = QListWidgetItem(l)
                 list_widget.addItem(item)
@@ -119,22 +130,37 @@ class MainWindow(QMainWindow):
 
         else:
             list_widget.hide()
+            if next_frame != None:
+                next_frame[0].setGeometry(50,height_back,361,201)
+                for next in next_frame[1:]:
+                    if next == None:
+                        break
+                    next.setGeometry(50,height_back+60,361,201)
             selected_items = list_widget.selectedItems()
             for item in selected_items:
                 search_symbols = re.search(r"(.*)\((\w+)\)",item.text())
                 values.append(search_symbols.group(2))
             data = {}
-            data["finance"] = values
-            with open("settings.json", "w") as file:
+            data[task] = values
+            with open(f"settings_{task}.json", "w") as file:
                 json.dump(data,file)
 
 
     def add_new_values(self):
-        with open("settings.json", "r") as file:
-            data = json.load(file)
+        values = ["finance","crypto","currency"]
+        data = {}
+        for value in values:
+            with open(f"settings_{value}.json", "r") as file:
+                new_data = json.load(file)
+            if new_data[value] == []:
+                data[value] = None
+            else:
+                data[value] = new_data[value]
+        database = Database()
+        database.remove()
         db = DatabaseAdapter(Crypto,Finance,Currency)
-        db.remove()
-        db.add(finance = data["finance"])
+        db.add(finance = data["finance"], currency = data["currency"], crypto =data["crypto"])
+        self.set_values()
 
 
 

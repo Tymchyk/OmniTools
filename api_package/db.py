@@ -16,7 +16,9 @@ class Database:
         return self.cursor.fetchall()
     
     def remove(self):
-        self.cursor.execute("DELETE FROM Finance")
+        self.cursor.execute("DROP TABLE Finance")
+        self.cursor.execute("DROP TABLE Crypto")
+        self.cursor.execute("DROP TABLE Currency")
 
 
 class Crypto(Database):
@@ -80,8 +82,8 @@ class DatabaseAdapter(Database):
         self.connection.commit()
     
     def add(self,**values):
-        value_crypto =get_crypto()
-        value_currency = get_currency()
+        value_crypto =get_crypto(values["crypto"])
+        value_currency = get_currency(values["currency"])
         value_finance = get_finance(values["finance"])
         self.crypto.add_value(value_crypto)
         self.currency.add_value(value_currency)
@@ -91,12 +93,9 @@ class DatabaseAdapter(Database):
         crypto = self.cursor.execute(f"SELECT * FROM Crypto WHERE created_on = Date('now')").fetchall()
         finance = self.cursor.execute(f"SELECT * FROM Finance WHERE created_on = Date('now')").fetchall()
         currency = self.cursor.execute(f"SELECT * FROM Currency WHERE created_on = Date('now')").fetchall()
+        self.connection.commit()
         return crypto,finance,currency
     
-    def close(self):
-        self.crypto.close()
-        self.finance.close()
-        self.currency.close()
     
 
 
