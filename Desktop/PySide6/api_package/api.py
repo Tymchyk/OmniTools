@@ -8,7 +8,7 @@ def get_finance(symbols):
     data = {}
     if symbols == None:
         symbols = ["AAPL", "MSFT", "AMZN", "GOOGL"]
-    current_date = date.today() - timedelta(days=1)
+    current_date = date.today() - timedelta(days=3)
     for symbol in symbols:
         response = requests.get(f"https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={api_key}")
         data[symbol] = float(response.json()["Time Series (Daily)"][current_date.strftime("%Y-%m-%d")]["4. close"])

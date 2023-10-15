@@ -19,4 +19,7 @@
         <file>images/icons/stackoverflow-16.ico</file>
         <file>images/icons/calendar-16.ico</file>
     </qresource>
+    <qresource prefix="/image">
+        <file>images/images/terry-vlisidis-WsEbnsnKbUE-unsplash.jpg</file>
+    </qresource>
 </RCC>
