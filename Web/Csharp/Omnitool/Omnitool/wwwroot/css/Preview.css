@@ -1,0 +1,287 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #000000, #222222);
+  position: relative;
+  color: #ffffff;
+}
+button.btn {
+    padding: 10px 20px;
+    color: #000000;
+    border: none;
+    color: #000000;
+    transition: color 0.5s;
+    background-clip: text;
+    -webkit-background-clip: text;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+button.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(to right, #000000, #ffffff);
+    transition: width 0.5s;
+    z-index: -1;
+}
+
+button.btn:hover::before {
+    width: 100%;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  width: 75%;
+  height: 400px;
+  background: radial-gradient(ellipse at bottom, rgba(255, 255, 255, 0.3) 5%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 70%);
+  bottom: 0;
+  left: 15%;
+}
+.app{
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 1200px;
+  height:800px;
+  border: solid 1px silver;
+  border-radius: 15px;
+  transition: transform 0.7s;
+}
+
+.app:hover {
+  transform: translateZ(50px) rotateX(5deg) rotateY(5deg);
+}
+
+.app_menu_small{
+  width: 100px;
+  height:800px;
+  border: solid 1px silver;
+  border-radius: 15px;
+  position:absolute;
+  animation: changeBackMenuSize 1s forwards;
+}
+
+.app_list_small{
+  margin-top: 50px;
+  text-decoration: none;
+  list-style-type: none;
+  margin-left: -10px;
+}
+.app_menu_big{
+  width: 100px;
+  height:800px;
+  position: absolute;
+  display: none;
+  overflow: hidden;
+  border: solid 1px silver;
+  border-radius: 15px;
+  animation: changeMenuSize 1s forwards;
+}
+
+@keyframes changeMenuSize {
+  from { 
+    width: 100px;
+    height: 800px;
+  }
+  to { 
+      width: 200px;
+      height: 800px;
+  }
+}
+@keyframes changeBackMenuSize {
+  from { 
+    width: 200px;
+    height: 800px;
+  }
+  to { 
+      width: 100px;
+      height: 800px;
+  }
+}
+
+.app_list{
+  margin-top: 50px;
+  margin-left: 20px;
+  text-decoration: none;
+  list-style-type: none;
+}
+.app_list_item{
+  margin-top: 50px;
+}
+
+.task{
+margin-left: 15px;
+margin-top: -25px;
+color: white;
+
+}
+.item_image{
+  margin-left: -60px;
+}
+
+#datepicker{
+  margin-left: 350px;
+  margin-top: 50px;
+  
+}
+.ui-datepicker {
+  width: 550px;
+}
+.ui-datepicker table {
+  font-size: 16px;
+}
+.highlight a.ui-state-default {
+  background: blue;
+  color: white;
+}
+.textarea{
+  width:800px;
+  height: 350px;
+  margin-left: 250px;
+  margin-top: 50px;
+  border: 1px solid silver;
+  border-radius: 15px;
+  overflow: auto;
+}
+#date-text{
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: 25px;
+  word-break: break-word;
+}
+.content{
+  width:1200px;
+  height:800px;
+}
+.content_tasks{
+  display: none;
+}
+.content_chat{
+  display: none;
+}
+.crypto {
+  margin-left: 300px;
+  margin-top: 50px;
+  width:325px;
+  height:300px;
+  border: solid 1px silver;
+  border-radius: 15px;
+}
+.currency {
+  margin-left: 675px;
+  margin-top: -300px;
+  width:325px;
+  height:300px;
+  border: solid 1px silver;
+  border-radius: 15px;
+}
+.finance {
+  margin-left: 300px;
+  margin-top: 50px;
+  width:700px;
+  height:300px;
+  border: solid 1px silver;
+  border-radius: 15px;
+}
+.chat_ul{
+  list-style-type: none;
+}
+.chat_list{
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.task_content{
+  border: solid 1px silver;
+  border-radius: 15px;
+  margin-left: 250px;
+  width:800px;
+  height:750px;
+  margin-top: 30px;
+}
+.chat_page{
+  width:800px;
+  height: 675px;
+}
+.chat_area{
+  width:800px;
+  height: 590px;
+  overflow: auto;
+  border-top: 1px solid silver;
+}
+.chat_color{
+  color:white;
+}
+
+.chat_writer{
+  margin-left: 50px;
+}
+
+.chat_message{
+  margin-left: 100px;
+}
+
+.translate_page{
+  display:none;
+}
+
+.container {
+  perspective: 1000px;
+}
+
+.add_task{
+  margin-left: 1000px;
+  margin-top:-500px;
+}
+.add_task_view{
+  display: none;
+  border: solid 1px silver;
+  border-radius: 15px;
+  margin-left: 250px;
+  width:800px;
+  height:750px;
+  margin-top: 30px;
+  overflow: auto;
+}
+
+.title{
+  color: white;
+  margin-left: 250px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.btn_position{
+  margin-left:350px;
+  margin-top:25px;
+}
+.color_schema{
+  color: white;
+}

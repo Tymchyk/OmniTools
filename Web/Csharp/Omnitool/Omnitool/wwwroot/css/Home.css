@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom, #000000, #222222);
+  position: relative;
+  color: #ffffff;
+}
+
+
+.main {
+  margin: 0;
+  width:1400px;
+  font-family: Arial, sans-serif;
+  height: 2500px;
+}
+
+.main-section {
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 2s;
+}
+
+.parallax {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+
+.section {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 4s, transform 4s;
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.content {
+  text-align: right;
+  padding-right: 50px;
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 4s, transform 4s;
+}
+
+.section.show .content {
+  opacity: 1;
+  transform: translateX(0);
+}
+.content_right{
+  margin-left:650px;
+}
+.content_left{
+  margin-right:750px;
+}
+
+.image-container {
+  width: 500px;
+  height: 500px;
+  margin-top: -300px;
+}
+
+.animate_left {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  animation: slideAndRotate 4s forwards;
+  box-shadow: -10px 0 10px rgba(241, 228, 228, 0.9);
+}
+
+.animate_right {
+  width: 100%;
+  margin-top: -100px;
+  height: 100%;
+  position: relative;
+  animation: slideAndRotateRight 4s forwards;
+  box-shadow: 10px 0 10px rgba(241, 228, 228, 0.9);
+}
+
+.content_main{
+  margin-left:300px;
+  margin-top: 300px;
+}
+
+.home_title{
+  font-size: 65px;
+  margin-left: 50px;
+}
+.home_text{
+  font-size: 45px;
+}
+
+.content_text{
+  font-size: 25px;
+}
+.main_butt{
+  margin-left: 150px;
+}
+
+.butt_view{
+  width: 150px;
+  height:50px;
+  font-size: 20px;
+  margin-left: 25px;
+}
+
+.contact_form{
+  width:600px;
+  height:700px;
+  margin:0 auto;
+  border: 1px solid silver;
+  margin-top:650px;
+  box-shadow: 10px 10px 10px 10px rgba(241, 228, 228, 0.5);
+  border-radius: 50px;
+  animation: FormRotate  4s forwards;
+  cursor: pointer;
+}
+.contact_content{
+  width:500px;
+  height:400px;
+  margin: 0 auto;
+  overflow: auto;
+}
+.contact_title{
+  margin-right:150px;
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
+.contact_fields{
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+@keyframes FormRotate {
+  0% {
+    top: -300px;
+    transform: perspective(500px) rotateX(10deg);
+  }
+  50% {
+    top: -300px;
+    transform: perspective(500px) rotateX(-10eg);
+  }
+  100% {
+    top: 0px;
+    transform: perspective(500px) rotateX(0deg);
+  }
+}
+
+@keyframes slideAndRotate {
+  0% {
+    left: -500px;
+    transform: perspective(500px) rotateY(-10deg);
+  }
+  50% {
+    left: -300px;
+    transform: perspective(500px) rotateY(0deg);
+  }
+  100% {
+    left: 0px;
+    transform: perspective(500px) rotateY(10deg);
+  }
+}
+
+@keyframes slideAndRotateRight {
+  0% {
+    right: -1200px;
+    transform: perspective(500px) rotateY(10deg);
+  }
+  50% {
+    right: -1000px;
+    transform: perspective(500px) rotateY(0deg);
+  }
+  100% {
+    right: -800px;
+    transform: perspective(500px) rotateY(-10deg);
+  }
+}

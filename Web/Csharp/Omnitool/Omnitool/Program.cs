@@ -1,18 +1,40 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Omnitool.Data;
+using Microsoft.Data.Sqlite;
+using Microsoft.AspNetCore.Authentication;
+
 
 var builder = WebApplication.CreateBuilder(args);
+var config = builder.Configuration;
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
+    options.UseSqlite(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<UserManager<IdentityUser>>();
+
+builder.Services.AddAuthentication()
+   .AddGoogle(googleOptions =>
+    {
+        googleOptions.ClientId = config["Authentication:Google:ClientId"];
+        googleOptions.ClientSecret = config["Authentication:Google:ClientSecret"];
+        googleOptions.CallbackPath = "/signin-google";
+    })
+
+   .AddFacebook(options =>
+   {
+       IConfigurationSection FBAuthNSection =
+       config.GetSection("Authentication:FB");
+       options.AppId = config["Authentication:Facebook:AppId"];
+        options.AppSecret = config["Authentication:Facebook:AppSecret"];
+   });
 
 var app = builder.Build();
 
