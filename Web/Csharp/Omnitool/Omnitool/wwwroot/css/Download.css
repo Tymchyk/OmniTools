@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #000000, #222222);
+    position: relative;
+    color: #ffffff;
+  }
+
+  .swiper-container {
+    width: 80%;
+    max-width: 600px;
+    margin-left: 350px;
+  }
+  .container_block{
+    width: 900px;
+    height:900px;
+    font-size: 20px;
+    margin-top: 150px;
+  }
+  .swiper-image{
+    width:150px;
+    height:150px;
+    margin-top: -100px;
+  }
+  .dowmload_button{
+    width:250px;
+    margin-left: 550px;
+    margin-top: 100px;
+  }
+  .swiper-slide {
+    width: 200px;
+    height: 475px;
+    border-radius: 10px;
+    box-shadow: 0px 0 10px rgba(241, 228, 228, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: black; /* Чорний фон */
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: blue; /* Сині стрілки */
+  }
+
+  .swiper-pagination {
+    color: blue; /* Сині номери слайдів */
+  }

@@ -4,14 +4,66 @@
 
 
 @section CustomStyles {
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="~/css/Download.css" asp-append-version="true" />
+
 }
+<div class = "container_block">
+  <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img  class = "swiper-image" src = "/images/images/android.png">
+          <div>Android </div>
+          <h3>Requirements for OmniTool for Android</h3>
+          <ul>
+              <li><strong>Operating System:</strong> Android 6.0 Marshmallow or newer.</li>
+              <li><strong>Processor:</strong> Minimum 1 GHz.</li>
+              <li><strong>RAM (Random Access Memory):</strong> Minimum 2 GB.</li>
+              <li><strong>Free Disk Space:</strong> Depends on the size of the app and its data.</li>
+              <li><strong>Screen Resolution:</strong> Suitable resolution for Android devices.</li>
+              <li><strong>Internet Connection:</strong> Required for updates and interaction with online services.</li>
+              <li><strong>Security and Privacy:</strong> Ensuring the protection of user's personal data.</li>
+          </ul>
+        </div>
+        <div class="swiper-slide">
+          <img  class = "swiper-image" src = "/images/images/windows.png">
+          <div>Windows </div>
+           <h3>Requirements for OmniTool for Windows</h3>
+          <ul>
+              <li><strong>Operating Systems:</strong> Windows 10 or Windows 11.</li>
+              <li><strong>Processor:</strong> Minimum 1 GHz.</li>
+              <li><strong>RAM (Random Access Memory):</strong> Minimum 2 GB.</li>
+              <li><strong>Free Disk Space:</strong> Minimum 100 MB of free space.</li>
+              <li><strong>Screen Resolution:</strong> Minimum screen resolution of 1024x768 pixels.</li>
+              <li><strong>Internet Connection:</strong> Required for updates and interaction with online services.</li>
+              <li><strong>Security and Privacy:</strong> Ensuring the protection of user's personal data.</li>
+          </ul>
+        </div>
+        <div class="swiper-slide">
+          <img class = "swiper-image" src = "/images/images/linux.png">
+          <div>Linux </div>
+          <h3>Requirements for OmniTool for Linux</h3>
+          <ul>
+              <li><strong>Operating Systems:</strong> Systems supporting Linux Kernel 4.x or newer.</li>
+              <li><strong>Processor:</strong> Minimum 1 GHz.</li>
+              <li><strong>RAM (Random Access Memory):</strong> Minimum 2 GB.</li>
+              <li><strong>Free Disk Space:</strong> Minimum 100 MB of free space.</li>
+              <li><strong>Screen Resolution:</strong> Minimum screen resolution of 1024x768 pixels.</li>
+              <li><strong>Internet Connection:</strong> Required for updates and interaction with online services.</li>
+              <li><strong>Security and Privacy:</strong> Ensuring the protection of user's personal data.</li>
+          </ul>
+        </div>
+      </div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to download page</h1>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+    </div>
+
+    <button class = "btn btn-success dowmload_button" >Download for <div id="currentSlideText" style="color: white"></div></button>
 </div>
-
 @section CustomJs {
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="~/js/Download.js" asp-append-version="true"></script>
 }
 

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/Omnitool.bundle.scp.css"
     },
     {
+      "Id": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/css/Download.css",
+      "PackagePath": "staticwebassets/css/Download.css"
+    },
+    {
       "Id": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/css/Home.css",
       "PackagePath": "staticwebassets/css/Home.css"
     },
@@ -41,6 +45,10 @@
       "PackagePath": "staticwebassets/images/icons/plus-24.jpg"
     },
     {
+      "Id": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/images/images/android.png",
+      "PackagePath": "staticwebassets/images/images/android.png"
+    },
+    {
       "Id": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/images/images/chat.png",
       "PackagePath": "staticwebassets/images/images/chat.png"
     },
@@ -49,8 +57,20 @@
       "PackagePath": "staticwebassets/images/images/home.png"
     },
     {
+      "Id": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/images/images/linux.png",
+      "PackagePath": "staticwebassets/images/images/linux.png"
+    },
+    {
       "Id": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/images/images/tasks.png",
       "PackagePath": "staticwebassets/images/images/tasks.png"
+    },
+    {
+      "Id": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/images/images/windows.png",
+      "PackagePath": "staticwebassets/images/images/windows.png"
+    },
+    {
+      "Id": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/js/Download.js",
+      "PackagePath": "staticwebassets/js/Download.js"
     },
     {
       "Id": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/js/Home.js",

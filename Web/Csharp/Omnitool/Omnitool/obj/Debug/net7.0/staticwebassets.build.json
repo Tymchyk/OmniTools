@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zmWwPEOoVwK2Flxz6S9txsEFv3P5Gnt/jGRud4imjDA=",
+  "Hash": "rnjRlT7Rp7bIUbERaFJkjcGkYZGs2Av//rOuWDnLGZo=",
   "Source": "Omnitool",
   "BasePath": "_content/Omnitool",
   "Mode": "Default",
@@ -1071,6 +1071,23 @@
       "OriginalItemSpec": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/obj/Debug/net7.0/scopedcss/projectbundle/Omnitool.bundle.scp.css"
     },
     {
+      "Identity": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/css/Download.css",
+      "SourceId": "Omnitool",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/",
+      "BasePath": "_content/Omnitool",
+      "RelativePath": "css/Download.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/Download.css"
+    },
+    {
       "Identity": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/css/Home.css",
       "SourceId": "Omnitool",
       "SourceType": "Discovered",
@@ -1224,6 +1241,23 @@
       "OriginalItemSpec": "wwwroot/images/icons/plus-24.jpg"
     },
     {
+      "Identity": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/images/images/android.png",
+      "SourceId": "Omnitool",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/",
+      "BasePath": "_content/Omnitool",
+      "RelativePath": "images/images/android.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/images/android.png"
+    },
+    {
       "Identity": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/images/images/chat.png",
       "SourceId": "Omnitool",
       "SourceType": "Discovered",
@@ -1258,6 +1292,23 @@
       "OriginalItemSpec": "wwwroot/images/images/home.png"
     },
     {
+      "Identity": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/images/images/linux.png",
+      "SourceId": "Omnitool",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/",
+      "BasePath": "_content/Omnitool",
+      "RelativePath": "images/images/linux.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/images/linux.png"
+    },
+    {
       "Identity": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/images/images/tasks.png",
       "SourceId": "Omnitool",
       "SourceType": "Discovered",
@@ -1273,6 +1324,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/images/tasks.png"
+    },
+    {
+      "Identity": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/images/images/windows.png",
+      "SourceId": "Omnitool",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/",
+      "BasePath": "_content/Omnitool",
+      "RelativePath": "images/images/windows.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/images/windows.png"
+    },
+    {
+      "Identity": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/js/Download.js",
+      "SourceId": "Omnitool",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/",
+      "BasePath": "_content/Omnitool",
+      "RelativePath": "js/Download.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/Download.js"
     },
     {
       "Identity": "/home/dmytro/OmniTool/Web/Csharp/Omnitool/Omnitool/wwwroot/js/Home.js",
