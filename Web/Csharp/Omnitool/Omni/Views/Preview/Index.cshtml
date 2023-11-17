@@ -1,0 +1,185 @@
+@model Model
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@section CustomStyles {
+  <link rel="stylesheet" href="~/css/Preview.css" asp-append-version="true" />
+}
+
+
+<div class="container" onmousemove="move(event)">
+        <div class = "app">
+            <div class = "app_menu_small">
+                <ul class="app_list_small">
+                    <li class= "app_list_item">
+                        <button class ="btn btn-primary btn-sm menu">
+                            <img src="/images/icons/list-view-24.jpg"  asp-append-version="true">
+                        </button>
+                    </li>
+                    <li class= "app_list_item">
+                        <button class ="btn btn-primary btn-sm Home">
+                            <img src="/images/icons/home-5-24.jpg"  asp-append-version="true">
+                        </button>
+                    </li>
+                    <li class= "app_list_item">
+                        <button class ="btn btn-primary btn-sm Chat">
+                            <img src="/images/icons/edit-5-24.jpg"  asp-append-version="true">
+                        </button>
+                    </li>
+                    <li class= "app_list_item">
+                        <button class ="btn btn-primary btn-sm Tasks">
+                            <img src="/images/icons/calendar-24.jpg"  asp-append-version="true">
+                        </button>
+                    </li>
+                    <li class= "app_list_item">
+                        <button class ="btn btn-primary btn-sm" disabled>
+                            <img src="/images/icons/gear-24.jpg" asp-append-version="true">
+                        </button>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class = "app_menu_big">
+                <ul class="app_list">
+                    <li class= "app_list_item">
+                        <button class ="btn btn-sm  btn-primary menu_big">
+                            <img src="/images/icons/list-view-24.jpg" class="item_image" asp-append-version="true">
+
+                            <div class="task">Menu</div>
+                        </button>
+                    </li>
+                    <li class= "app_list_item">
+                        <button class ="btn  btn-primary btn-sm Home" >
+                            <img src="/images/icons/home-5-24.jpg" class="item_image" asp-append-version="true">
+
+                            <div class="task">Home</div>
+                        </button>
+                    </li>
+                    <li class= "app_list_item">
+                        <button class ="btn btn-primary btn-sm Chat">
+                            <img src="/images/icons/edit-5-24.jpg"  class="item_image" asp-append-version="true">
+
+                            <div class="task">Chats</div>
+                        </button>
+                    </li>
+                    <li class= "app_list_item">
+                        <button class ="btn btn-primary btn-sm Tasks">
+                            <img src="/images/icons/calendar-24.jpg"  class="item_image" asp-append-version="true">
+
+                            <div class="task">Tasks</div>
+                        </button>
+                    </li>
+                    <li class= "app_list_item">
+                        <button class ="btn btn-primary btn-sm" disabled>
+                            <img src="/images/icons/gear-24.jpg"  class="item_image" asp-append-version="true">
+
+                            <div class="task">Settings</div>
+                        </button>
+                    </li>
+                </ul>
+
+            </div>
+        <div class = "content">
+            <div class="content_tasks">
+                <div class = "task_view">
+                    <div id="datepicker" style = "width: 600px"></div>
+                    <button class = "btn add_task"><img src="/images/icons/plus-24.jpg" asp-append-version="true"></button>
+                    <div class ="textarea">
+                        <div id="date-text"></div>
+                    </div>
+                </div>
+                <div class="add_task_view">
+                    <h1 class = "title"> Create your task</h1>
+                    <form action="/Preview/AddTask" method = "post">
+                        <textarea name="taskMessage" rows="4" class="form-control"></textarea>
+                        <h3 class="title">Choose your date</h3>
+                        <input type="text" class="form-control" id="datepicker_input"name="taskDate">
+                        <button type = "submit" class = "btn btn-primary btn_position"><h5 class="color_schema" >Submit</h5></button>
+                    </form>
+                </div>
+            </div>
+            <div class = "content_home">
+                <div class="crypto">
+                    @{
+                        foreach(var crypto in Model.cryptos){
+                            <h6 class="chat_writer">@crypto.Name</h6>
+                            <h6 class="chat_message">@crypto.Price $</h6>
+                        }
+                    }
+                </div>
+                <div class = "currency">
+                    @{
+                        foreach(var currency in Model.currencies){
+                            <h6 class="chat_writer">@currency.Name - UAH </h6>
+                            <h6 class="chat_message">@currency.Price</h6>
+                        }
+                    }
+
+                </div>
+                <div class="finance">
+                    @{
+                        foreach(var finance in Model.finances){
+                            <h6 class="chat_writer">@finance.Name</h6>
+                            <h6 class="chat_message">@finance.Price</h6>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="content_chat">
+            <div class= "task_content">
+                    <ul class="chat_ul">
+                        <li class ="chat_list"><button class="btn btn-primary chat_button" data-value = "chat"><div class="chat_color">Chat</div></button></li>
+                        <li class ="chat_list"><button class="btn btn-primary chat_button" data-value = "translate"><div class="chat_color">Translate</div></button></li>
+                    </ul>
+                    <div class="chat_page">
+                        <div class ="chat_area">
+                            @{
+                                foreach(var chat in Model.chats){
+                                    <h6 class="chat_writer">@chat.Writer</h6>
+                                    <h6 class="chat_message">@chat.Message</h6>
+                                }
+                            }
+
+                        </div>
+                        <form action="/Preview/QueryPost" class ="QueryForm" method="post" onsubmit ="return false;">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control query" name="query" aria-label="" aria-describedby="basic-addon1">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary sendChat" type="submit">Send</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="translate_page">
+                        <form action="/Preview/TranslatePost" method="post">
+                            <textarea id="message" name="message" rows="4" cols="50">
+                                @Model.translate[1]
+                                </textarea><br><br>
+                            <select name="FromLanguage">
+                                <option value="English">English</option>
+                                <option value="Ukrainian">Ukrainian</option>
+                            </select>
+                            <select name="ToLanguage">
+                                <option value="English">English</option>
+                                <option value="Ukrainian">Ukrainian</option>
+                            </select>
+                            <input type="submit" class = "btn btn-primary">
+                        </form>
+                        <div class = "translate_message">
+                            @Model.translate[0]
+                        </div>
+                    </div>
+
+            </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+@section CustomJs {
+  <script src="~/js/Preview.js" asp-append-version="true"></script>
+}

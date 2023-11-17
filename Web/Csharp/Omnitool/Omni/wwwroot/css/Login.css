@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #000000, #222222);
+    position: relative;
+    color: #ffffff;
+  }
+.Login_form{
+    width: 600px;
+    height:600px;
+    border: 1px solid silver;
+    margin-top:150px;
+    margin-left:350px;
+    box-shadow: 10px 10px 10px 10px rgba(241, 228, 228, 0.5);
+    border-radius: 50px;
+    animation: FormRotate  4s forwards;
+}
+
+.butt{
+    margin-left: 25px;
+
+}
+.buttons{
+    margin-left:175px;
+}
+
+@keyframes FormRotate {
+    0% {
+      bottom: -1200px;
+      transform: perspective(500px) rotateX(25deg);
+    }
+    100% {
+      bottom: 0px;
+      transform: perspective(500px) rotateX(0deg);
+    }
+  }
+
+.login_content{
+    width: 400px;
+    height: 400px;
+    margin:0 auto;
+}
+
+.another_service{
+    margin-top: 50px;
+}
+.title{
+    margin-left:150px;
+}
+
+.title_register{
+    margin-left:125px;
+}

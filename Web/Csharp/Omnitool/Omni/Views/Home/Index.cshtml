@@ -1,0 +1,76 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section CustomStyles {
+  <link rel="stylesheet" href="~/css/Home.css" asp-append-version="true" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+}
+
+<div class = "main">
+  <div class="main-section">
+    <div class="content_main">
+      <p class="home_title">Welcome to Omnitool</h1>
+      <p class="home_text">Your universal assistant for all tasks</p>
+      <div class="main_butt">
+        <button class = "btn btn-success butt_view"><a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Register">Sign up</a></button>
+        <button class = "btn btn-success butt_view"><a class="nav-link text-white" asp-area="Identity" asp-page="/Account/Login">Log in</a></button>
+      </div>
+    </div>
+  </div>
+  <div class="parallax" data-speed="0.4">
+    <div class="gear"></div>
+  </div>
+  <div class="section">
+    <div class="content">
+      <div class="content_right">
+          <h1 class = "content_title">Cryptocurrency, Stocks, and Currency Prices</h1>
+          <p class="content_text">Explore real-time and historical data for cryptocurrencies, stocks, and currency exchange rates. Stay informed about the latest trends and make informed investment decisions.</p>
+      </div>
+       <div class="image-container">
+        <img class="animate animate_left" src="/images/images/home.png" alt="Зображення">
+      </div>
+    </div>
+  </div>
+  <div class="section" value = "right">
+    <div class="content">
+      <div class="content_left">
+       <h1>Chat with ChatGPT and Embedded Translator</h1>
+      <p class="content_text">Engage in a conversation with ChatGPT, a cutting-edge AI chatbot capable of answering a wide range of questions and providing insightful information. Enjoy the convenience of an embedded translator to communicate seamlessly in multiple languages.</p>
+      </div>
+       <div class="image-container">
+        <img class="animate "  src="/images/images/chat.png" alt="Зображення">
+      </div>
+    </div>
+  </div>
+  <div class="section" value = "left">
+    <div class="content">
+      <div class="content_right">
+        <h1>Personal Calendar and Note-taking</h1>
+        <p class="content_text">Stay organized with our interactive calendar feature. Create your own schedule, set reminders, and make personal notes to keep track of your important tasks and events.</p>
+      </div>
+      <div class="image-container">
+        <img class="animate" src="/images/images/tasks.png" alt="Зображення">
+      </div>
+    </div>
+  </div>
+    <div class="section_last">
+      <div class="content_last">
+        <div class="contact_form">
+              <h1 class= "contact_title"> Contact with us</h1>
+              <div class="contact_content">
+                <form action="" method= "post">
+                  <input class ="form-control contact_fields" type = "text" placeholder = "Write your email" name ="email">
+                  <textarea class = "form-control contact_fields" rows="4" name ="contact_text" placeholder = "Write your message"></textarea>
+                  <button class = "btn btn-success contact_fields" type="submit">Send message</button>
+                </form>
+            </div>
+          </div>
+        </div>
+  </div>
+</div>
+
+
+@section CustomJs {
+  <script src="~/js/Home.js" asp-append-version="true"></script>
+}
